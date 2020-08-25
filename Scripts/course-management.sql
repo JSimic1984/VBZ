@@ -199,3 +199,5 @@ VALUES('Sicherheit und Umweltschutz'),
 -- kurskontrolle (fnr, knr) Christoph
 
 
+-- TEST GIT (knr, kursbezeichnung, ktnr, kursort) - JELENA
+
