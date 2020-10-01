@@ -112,7 +112,7 @@ limit 40000;
 
 -- Aufgabe 8a 😊
 
-select
+select distinct
     fsi.linie,
     fsi.betriebsdatum,
     fsi.fw_no,
