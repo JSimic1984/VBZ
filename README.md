@@ -37,4 +37,4 @@ update vbzdat.fahrzeiten_soll_ist set datumzeit_an_von = DATE_ADD (STR_TO_DATE (
 update vbzdat.fahrzeiten_soll_ist set datumzeit_ist_ab_von = DATE_ADD (STR_TO_DATE(datum_von , '%d.%m.%Y'), interval ist_an_von second );
 update vbzdat.fahrzeiten_soll_ist set datum_nach = STR_TO_DATE(datum_nach ,'%d.%m.%Y' );
 
-
+![What is this](ER_Diagramm_vbzdat.JPG)
