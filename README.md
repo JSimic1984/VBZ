@@ -109,3 +109,18 @@ limit 40000;
 
 ![What is this](Aufgabe7_linie3.JPG)
 
+
+-- Aufgabe 8a 😊
+
+select
+    fsi.linie,
+    fsi.betriebsdatum,
+    fsi.fw_no,
+    fsi.fw_lang 
+from
+    vbzdat.fahrzeiten_soll_ist fsi
+where
+    fsi.linie = 3
+limit 40000;
+
+
