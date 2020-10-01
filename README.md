@@ -123,4 +123,6 @@ where
     fsi.linie = 3
 limit 40000;
 
+![What is this](Aufgabe8a_linie3.JPG)
+
 
