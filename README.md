@@ -125,4 +125,15 @@ limit 40000;
 
 ![What is this](8a_linie3JPG.JPG)
 
+--Aufgabe 8b
 
+create view query_line3
+as select 
+    fsi.linie,
+    fsi.richtung,
+    fsi.fw_no,
+    fsi.fw_lang
+from 
+   vbzdat.fahrzeiten_soll_ist fsi
+where 
+    fsi.linie = 3
