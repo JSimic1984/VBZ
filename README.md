@@ -137,3 +137,6 @@ from
    vbzdat.fahrzeiten_soll_ist fsi
 where 
     fsi.linie = 3
+    
+ ![What is this](8b_view.JPG)   
+    ![What is this](8a_linie3JPG.JPG)
