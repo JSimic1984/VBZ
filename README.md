@@ -34,9 +34,9 @@ update fahrzeiten_soll_ist set datum__nach =STR_TO_DATE(datum_nach ,'%d.%m.%Y');
 
 
 
--- Aufgaben 7 - Linie 3 😊
 
--- Aufgabe 7 Linie 3 
+
+-- Aufgabe 7 Linie 3 , fahrt_id 2647
 
 select
     fsi.linie,
@@ -73,7 +73,7 @@ where
 limit 40000;
 
 
-![What is this](Aufgabe7_linie3.JPG)
+![What is this](Aufgabe_7_linie_3.JPG)
 
 
 -- Aufgabe 8a 😊
