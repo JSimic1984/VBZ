@@ -103,7 +103,7 @@ from
 where 
     fsi.linie = 3
     
-  ![What is this](.JPG)
+  ![What is this](Aufgabe8_Linie_3.JPG)
   
     
   ---- Tabellenerstellungsabfragen -linie
