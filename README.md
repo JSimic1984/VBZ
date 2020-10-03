@@ -1,40 +1,36 @@
 # VBZ
 Datenbank - Prüfung VBZ
-
--- Aufgabe 6 Bereinigung und ER Diagramm
-
-ALTER TABLE vbzdat.haltepunkt ADD CONSTRAINT haltepunkt_FK FOREIGN KEY (halt_id) REFERENCES haltestelle (halt_id);
-
-
-ALTER TABLE vbzdat.fahrzeiten_soll_ist ADD id INT primary key auto_increment first;
+  Aufgabe 6 
+  
+alter table fahrzeiten_soll_ist add id INT primary key auto_increment first; 
 
 
-alter table vbzdat.fahrzeiten_soll_ist add constraint fahrzeiten_soll_ist_FK foreign key (halt_punkt_id_von) references haltpunkt(halt_punkt_id);
-alter table vbzdat.fahrzeiten_soll_ist add constraint fahrzeiten_soll_ist_FK_1 foreign key (halt_punkt_id_nach) references haltepunkt(halt_punkt_id);
+alter table fahrzeiten_soll_ist add constraint fahrzeiten_soll_ist_FK foreign key
+(halt_punkt_id_von) references haltepunkt(halt_punkt_id);
+
+alter table fahrzeiten_soll_ist add constraint fahrzeiten_soll_ist_FK_1 foreign key
+(halt_punkt_id_nach) references haltepunkt(halt_punkt_id);
+
+alter table haltepunkt add constraint haltepunkt_FK foreign key (halt_id)
+references haltestelle(halt_id);
+
+alter table fahrzeiten_soll_ist add betriebs_datum DATE NULL; 
+alter table fahrzeiten_soll_ist add datumzeit_soll_an_von DATETIME NULL; 
+alter table fahrzeiten_soll_ist add datumzeit_ist_an_von DATETIME NULL; 
+alter table fahrzeiten_soll_ist add datumzeit_soll_ab_von DATETIME NULL;
+alter table fahrzeiten_soll_ist add datumzeit_ist_ab_von DATETIME NULL; 
+alter table fahrzeiten_soll_ist add datum__nach DATE NULL;
 
 
-
-ALTER TABLE vbzdat.haltepunkt ADD CONSTRAINT haltepunkt_FK FOREIGN KEY (halt_id) REFERENCES haltestelle (halt_id);
-
-
-
-alter table vbzdat.fahrzeiten_soll_ist add betriebs_datum date null;
-alter table vbzdat.fahrzeiten_soll_ist add datumzeit_soll_an_von datetime null;
-alter table vbzdat.fahrzeiten_soll_ist add datumzeit_ist _an_von datetime null;
-alter table vbzdat.fahrzeiten_soll_ist add datumzeit_soll_ab_von datetime null;
-alter table vbzdat.fahrzeiten_soll_ist add datumzeit_ist_ab_von datetime null;
-alter table vbzdat.fahrzeiten_soll_ist add datum_nach date null;
-
--- Datentyp  konvertierung
+update fahrzeiten_soll_ist set betriebs_datum = STR_TO_DATE(betriebsdatum ,'%d.%m.%Y');
+update fahrzeiten_soll_ist set datumzeit_soll_an_von = DATE_ADD(STR_TO_DATE(datum_von ,'%d.%m.%Y'), interval soll_an_von SECOND);
+update fahrzeiten_soll_ist set datumzeit_ist_an_von = DATE_ADD(STR_TO_DATE(datum_von ,'%d.%m.%Y'), interval ist_an_von SECOND);
+update fahrzeiten_soll_ist set datumzeit_soll_ab_von = DATE_ADD(STR_TO_DATE(datum_von ,'%d.%m.%Y'), interval soll_ab_von SECOND);
+update fahrzeiten_soll_ist set datumzeit_ist_ab_von = DATE_ADD(STR_TO_DATE(datum_von,'%d.%m.%Y'), interval ist_ab_von SECOND);
+update fahrzeiten_soll_ist set datum__nach =STR_TO_DATE(datum_nach ,'%d.%m.%Y');
 
 
-update vbzdat.fahrzeiten_soll_ist set betriebs_datum = STR_TO_DATE (betriebsdatum , '%d.%m.%Y');
-update vbzdat.fahrzeiten_soll_ist set datumzeit_soll_an_von = DATE_ADD (STR_TO_DATE(datum_von ,'%d.%m.%Y'), interval soll_an_von second );
-update vbzdat.fahrzeiten_soll_ist set datumzeit_an_von = DATE_ADD (STR_TO_DATE (datum_von , '%d.%m.%Y'), interval ist_an_von second );
-update vbzdat.fahrzeiten_soll_ist set datumzeit_ist_ab_von = DATE_ADD (STR_TO_DATE(datum_von , '%d.%m.%Y'), interval ist_an_von second );
-update vbzdat.fahrzeiten_soll_ist set datum_nach = STR_TO_DATE(datum_nach ,'%d.%m.%Y' );
-
-![What is this](ER_Diagramm_vbzdat.JPG)
+![What is this](ER_Diagramm.JPG)
 
 
 
