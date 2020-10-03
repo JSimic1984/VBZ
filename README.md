@@ -121,4 +121,4 @@ from
    
  alter  table linie add fahrweg_id INT primary key auto_increment first;  
    
-      
+   ![What is this](Tabelle_linie.JPG)   
