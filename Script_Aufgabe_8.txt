@@ -1,0 +1,43 @@
+-- Aufgabe 8 - Linien Tabelle , linie 3
+
+select distinct
+    fsi.linie,
+    fsi.richtung,
+    fsi.fw_no,
+    fsi.fw_lang 
+from
+    vbzdat.fahrzeiten_soll_ist fsi
+where
+    fsi.linie = 3
+limit 40000;
+
+--- View query_line 
+
+create view query_line3
+as select 
+    fsi.linie,
+    fsi.richtung,
+    fsi.fw_no,
+    fsi.fw_lang
+from 
+   vbzdat.fahrzeiten_soll_ist fsi
+where 
+    fsi.linie = 3
+    
+    
+---- Tabellenerstellungsabfragen -linie
+   
+ create table linie 
+
+select 
+     fsi.fahrweg_id,
+     fsi.linie,
+     fsi.richtung,
+     fsi.fw_no,
+     fsi.fw_lang
+from
+    vbzdat.fahrzeiten_soll_ist fsi;
+   
+ alter  table linie add fahrweg_id INT primary key auto_increment first;
+
+
