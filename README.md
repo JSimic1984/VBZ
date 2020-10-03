@@ -187,3 +187,19 @@ alter table vbzdat.ankunftszeiten  add constraint ankunftszeiten_FK_1 foreign ke
 (fahrweg_id) references linie (fahrweg_id);
 
 ![What is this](Aufgabe_9.JPG)   
+
+
+-- Aufgabe 12
+    
+    
+select
+      fsi.linie,
+      fsi.richtung,
+      fsi.fahrt_id,
+      time_format(time (a.datumzeit_soll_ab), '%d.%m.%Y') as soll_ab
+from 
+     vbzdat.fahrzeiten_soll_ist fsi 
+ inner join vbzdat.linie.linie on 
+     a.fahrweg_id = l.fahrweg_id
+where date(a.datumzeit_soll_ab)= '2018.11.01' and l.richtung = 1 
+order by soll_ab 
