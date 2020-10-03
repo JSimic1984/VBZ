@@ -36,7 +36,7 @@ update fahrzeiten_soll_ist set datum__nach =STR_TO_DATE(datum_nach ,'%d.%m.%Y');
 
 
 
--- Aufgabe 7 Linie 3 , fahrt_id 2647
+-- Aufgabe 7 - Zeitdifferinzierung  Linie 3 , fahrt_id 2647
 
 select
     fsi.linie,
@@ -80,7 +80,7 @@ limit 40000;
 
 select distinct
     fsi.linie,
-    fsi.betriebsdatum,
+    fsi.richtung,
     fsi.fw_no,
     fsi.fw_lang 
 from
@@ -89,7 +89,7 @@ where
     fsi.linie = 3
 limit 40000;
 
-![What is this](8a_linie3JPG.JPG)
+![What is this](Aufgabe8_Linie_3.JPG)
 
 --Aufgabe 8b
 
