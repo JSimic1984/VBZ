@@ -75,8 +75,9 @@ limit 40000;
 
 ![What is this](Aufgabe_7_linie_3.JPG)
 
+-- Aufgabe 8 
 
--- Aufgabe 8a 😊
+--- Linie 3 Abfrage
 
 select distinct
     fsi.linie,
@@ -89,9 +90,7 @@ where
     fsi.linie = 3
 limit 40000;
 
-![What is this](Aufgabe8_Linie_3.JPG)
-
---Aufgabe 8b
+--- View query_line 
 
 create view query_line3
 as select 
@@ -104,54 +103,22 @@ from
 where 
     fsi.linie = 3
     
- ![What is this](8b_view.JPG)   
+  ![What is this](.JPG)
   
-----Aufgaben 9
+    
+  ---- Tabellenerstellungsabfragen -linie
+    
+ create table linie 
 
----habe ich verschiedene Optionenen ausprobiert, aber keine Lösung gefünden
-
-create table Ankunfszeiten (
-id int not null AUTO_INCREMENT,
-haltpunkt_id int,
-fahrweg_id int,
-datum_zeit_ist_an  datetime,
-datumzeit_soll_an  datetime,
-datumzeit_soll_ab datetime,
-dalay int 
-)
 select 
-id,
-haltpunkt_id,
-fahrweg_id,
-datum_zeit_ist_an,
-datumzeit_soll_an,
-dalay
-into Ankunfszeiten 
+     fsi.fahrweg_id,
+     fsi.linie,
+     fsi.richtung,
+     fsi.fw_no,
+     fsi.fw_lang
 from
-fahrzeiten_soll_ist 
-where 
-   seq_von = 1
+    vbzdat.fahrzeiten_soll_ist fsi;
    
-
-
-insert into Ankunftszeiten (halt_punkt_id)
-select 
-halt_punkt_id,
-from haltepunkt;
-insert into ankunftszeiten (id,fahrweg_id,
-fahrt_id,
-datumzeit_ist_an_von,
-datumzeit_soll_an_von,
-datumzeit_soll_ab_von)
-select 
-id,fahrweg_id,
-fahrt_id,
-datumzeit_ist_an_von,
-datumzeit_soll_an_von,
-datumzeit_soll_ab_von,
-from
-fahrzeiten_soll_ist 
-where
-seq_von = 1 
-
+ alter  table linie add fahrweg_id INT primary key auto_increment first;  
    
+      
