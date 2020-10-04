@@ -202,4 +202,5 @@ from
  inner join vbzdat.linie.linie on 
      a.fahrweg_id = l.fahrweg_id
 where date(a.datumzeit_soll_ab)= '2018.11.01' and l.richtung = 1 
-order by soll_ab 
+order by soll_ab;
+
