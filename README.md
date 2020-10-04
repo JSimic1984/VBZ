@@ -30,7 +30,7 @@ update fahrzeiten_soll_ist set datumzeit_ist_ab_von = DATE_ADD(STR_TO_DATE(datum
 update fahrzeiten_soll_ist set datum__nach =STR_TO_DATE(datum_nach ,'%d.%m.%Y');
 
 
-![What is this](ER_Diagramm.JPG)          ![What is this](Script_Aufgabe_6) 
+![What is this](ER_Diagramm.JPG)     
 
 
 
